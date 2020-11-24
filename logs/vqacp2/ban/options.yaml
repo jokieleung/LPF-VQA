@@ -1,0 +1,87 @@
+exp:
+  dir: logs/vqacp2/ban
+  resume: null
+dataset:
+  import: rubi.datasets.factory
+  name: vqacp2
+  dir: data/vqa/vqacp2
+  train_split: train
+  eval_split: val
+  proc_split: train
+  nb_threads: 24
+  batch_size: 2048
+  nans: 3000
+  minwcount: 0
+  nlp: mcb
+  samplingans: true
+  dir_rcnn: data/vqa/coco/extract_rcnn/2018-04-27_bottom-up-attention_fixed_36
+  adversarial_method: null
+model:
+  name: default
+  network:
+    import: rubi.models.networks.factory
+    name: ban
+    txt_enc:
+      name: skipthoughts
+      type: BayesianUniSkip
+      dropout: 0.25
+      fixed_emb: false
+      dir_st: data/skip-thoughts
+    self_q_att: true
+    residual: false
+    fusion:
+      type: block
+      input_dims:
+      - 4800
+      - 2048
+      output_dim: 2048
+      mm_dim: 1000
+      chunks: 20
+      rank: 15
+      dropout_input: 0.0
+      dropout_pre_lin: 0.0
+    agg:
+      type: max
+    classif:
+      mlp:
+        input_dim: 2048
+        dimensions:
+        - 1024
+        - 1024
+        - 3000
+  criterion:
+    import: rubi.models.criterions.factory
+    name: vqa_cross_entropy
+  metric:
+    import: rubi.models.metrics.factory
+    name: vqa_accuracies
+optimizer:
+  import: rubi.optimizers.factory
+  name: Adam
+  lr: 0.0003
+  gradual_warmup_steps:
+  - 0.5
+  - 2.0
+  - 7.0
+  lr_decay_epochs:
+  - 14
+  - 24
+  - 2
+  lr_decay_rate: 0.25
+engine:
+  name: logger
+  debug: false
+  print_freq: 10
+  nb_epochs: 27
+  saving_criteria:
+  - eval_epoch.accuracy_top1:max
+misc:
+  logs_name: null
+  cuda: true
+  seed: 1337
+view:
+  name: plotly
+  items:
+  - logs:train_epoch.loss+logs:eval_epoch.loss
+  - logs:train_epoch.accuracy_top1+logs:eval_epoch.accuracy_top1
+  - logs_train_oe:train_epoch.overall+logs_val_oe:eval_epoch.overall
