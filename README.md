@@ -2,7 +2,7 @@
 
 This is the code for the **SIGIR 2021** paper.
 
-All the data pre-process and projects' setup please refer to [project_setup.md](./project_setup.md) written by RUBi. Many thanks for their efforts.
+All the data pre-process and projects' setup please refer to [project_setup.md](./project_setup.md) written by [RUBi](https://github.com/cdancette/rubi.bootstrap.pytorch). Many thanks for their efforts.
 
 The implementation of our model and the LPF objective function is in the folder:
 
