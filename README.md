@@ -1,6 +1,6 @@
-# LPF: A Language-Prior Feedback Objective Function for Out-of-distribution Generalization in Visual Question Answering
+# LPF: A Language-Prior Feedback Objective Function for De-biased Visual Question Answering
 
-This is the code for the **NAACL 2021** submission.
+This is the code for the **SIGIR 2021** paper.
 
 All the data pre-process and projects' setup please refer to [project_setup.md](./project_setup.md) written by RUBi. Many thanks for their efforts.
 
@@ -26,4 +26,4 @@ python -m bootstrap.run -o rubi/options/vqacp2/[model_name].yaml
 
 ## About Open Source
 
-We will open-source the codebase upon acceptance.
+This is the very begining version of [LPF-VQA](https://github.com/jokieleung/LPF-VQA). We will detail the README and code after several DDLs, thanks for your patience.
