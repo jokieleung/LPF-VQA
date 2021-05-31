@@ -24,6 +24,21 @@ python -m bootstrap.run -o rubi/options/vqacp2/[model_name].yaml
 
 **Note:** the `[mode_name]`can be `[lpf]`, `[lpf_ban]`, `[lpf_updn]`.
 
-## About Open Source
-
+## Updates
 This is the very begining version of [LPF-VQA](https://github.com/jokieleung/LPF-VQA). We will detail the README and code after several DDLs, thanks for your patience.
+
+## Citation
+
+If you find this paper helps your research, please kindly consider citing our paper in your publications.
+
+```BibTeX
+@inproceedings{liang2021lpf,
+  title={LPF: A Language-Prior Feedback Objective Function for De-biased Visual Question Answering},
+  author={Liang, Zujie and Hu, Haifeng and Zhu, Jiaying},
+  booktitle={Proceedings of the 44th International Conference on Research and Development in Information Retrieval (SIGIR)},
+  year={2021}
+}
+```
+
+
+
