@@ -1,6 +1,6 @@
 # LPF: A Language-Prior Feedback Objective Function for De-biased Visual Question Answering
 
-This is the code for the **SIGIR 2021** paper.
+This is the code for the **SIGIR 2021** paper "[LPF: A Language-Prior Feedback Objective Function for De-biased Visual Question Answering](https://arxiv.org/abs/2105.14300)".
 
 All the data pre-process and projects' setup please refer to [project_setup.md](./project_setup.md) written by [RUBi](https://github.com/cdancette/rubi.bootstrap.pytorch). Many thanks for their efforts.
 
